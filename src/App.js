@@ -13,7 +13,7 @@ function App() {
         <meta name="og:description" content="This is the website of the Little Lemon Restaurant in Donostia."/>
         <meta property="og:image" content="assets/img/Logo.svg" />
       </head>
-      <body>
+      <body className='body'>
         <Header/>
         <Nav/>
         <Main/>

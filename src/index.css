@@ -1,13 +1,327 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+p, div {
+  font-size: 1vw;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+li {
+  font-size: 1.5vw;
+}
+
+h1{
+  font-size: 4vw;
+}
+
+h2{
+  font-size: 3vw;
+}
+
+.body {
+  display: grid;
+  margin: 0% 15% 0% 15%;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas:
+    "header nav nav nav nav nav"
+    "main main main main main main"
+    "footer footer footer footer footer footer";
+}
+
+header {
+  display: grid;
+  grid-area: header;
+  place-items: center;
+  padding: 0.5rem 0;
+}
+
+nav {
+  display: grid;
+  grid-area: nav;
+  padding: 0.5rem 0;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: 14% 14% 14% 22% 22% 14%;
+  list-style: none;
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-area: main;
+  grid-template-rows: repeat(4, auto);
+  grid-template-columns: auto;
+  grid-template-areas:
+    "intro"
+    "menu"
+    "testimonials"
+    "info";
+}
+
+.intro {
+  display: grid;
+  grid-area: intro;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto;
+  grid-template-areas: "text photo";
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.intro .text {
+  display: grid;
+  grid-template-rows: 13% 15% auto auto;
+  grid-area: text;
+  margin: 5% 25% 0 0;
+}
+
+.intro .text p, div {
+  font-size: 2vw;
+}
+
+.intro .food {
+  display: grid;
+  grid-area: photo;
+  justify-content: end;
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.intro .food img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.menu {
+  display: grid;
+  grid-area: menu;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:
+    "heading heading button"
+    "dish1 dish2 dish3";
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.dish1, .dish2, .dish3 {
+  display: grid;
+  place-items: center;
+  text-align: left;
+  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto 25%;
+  grid-template-areas:
+    "photo photo"
+    "name price"
+    "description description"
+    "button button";
+  padding: 0 20%;
+}
+
+.menu h1{
+  display: grid;
+  grid-area: heading;
+}
+
+.menu .menu-button{
+  display: grid;
+  grid-area: button;
+  place-items: center;
+}
+
+.menu img {
+  display: grid;
+  grid-area: photo;
+  height: auto;
+  max-width: 200px;
+  width: 100%;
+}
+
+.menu h3 {
+  display: grid;
+  font-size: 1.5vw;
+  grid-area: name;
+  width: 100%;
+}
+
+.menu #price {
+  display: grid;
+  grid-area: price;
+  width: 100%;
+  text-align: right;
+}
+
+.menu #description {
+  display: grid;
+  grid-area: description;
+}
+
+.menu .order {
+  display: grid;
+  grid-area: button;
+  width: 100%;
+  text-align: left;
+}
+
+.menu .order p {
+  font-size: 1.2vw;
+}
+
+.menu .dish1 {
+  grid-area: dish1;
+}
+
+.menu .dish2 {
+  grid-area: dish2;
+}
+
+.menu .dish3 {
+  grid-area: dish3;
+}
+
+.testimonials {
+  display: grid;
+  grid-area: testimonials;
+  place-items: center;
+  gap: 5%;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto auto auto;
+  grid-template-areas:
+    "title title title title"
+    "testimonial1 testimonial2 testimonial3 testimonial4";
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.testimonial1, .testimonial2, .testimonial3, .testimonial4 {
+  display: grid;
+  place-items: center;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto auto;
+  grid-template-areas:
+    "stars stars"
+    "photo name"
+    "description description";
+  padding: 15%;
+}
+
+.testimonials h1 {
+  display: grid;
+  grid-area: title;
+  place-items: center;
+}
+
+.testimonials #stars {
+  display: grid;
+  grid-area: stars;
+  width: 100%;
+  text-align: left;
+  padding-bottom: 15%;
+}
+
+.testimonials svg {
+  height: auto;
+  max-width: 150px;
+  width: 70%;
+}
+
+.testimonials .pic {
+  display: grid;
+  grid-area: photo;
+  width: 100%;
+  text-align: left;
+}
+
+.testimonials img {
+  height: auto;
+  max-width: 80px;
+  width: 80%;
+}
+
+.testimonials .description {
+  display: grid;
+  grid-area: description;
+  width: 100%;
+  text-align: left;
+}
+
+.testimonials p {
+  font-size: 1.2vw;
+}
+
+.testimonials h3 {
+  font-size: 1.5vw;
+}
+
+.testimonial1 {
+  display: grid;
+  grid-area: testimonial1;
+}
+
+.testimonial2 {
+  display: grid;
+  grid-area: testimonial2;
+}
+
+.testimonial3 {
+  display: grid;
+  grid-area: testimonial3;
+}
+
+.testimonial4 {
+  display: grid;
+  grid-area: testimonial4;
+}
+
+.info {
+  display: grid;
+  grid-area: info;
+  grid-template-rows: auto;
+  grid-template-columns: 60% 40%;
+  grid-template-areas: "text photo";
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.info .text {
+  display: grid;
+  grid-template-rows: 13% 15% auto auto;
+  grid-area: text;
+  margin: 5% 25% 0 0;
+}
+
+.info .text p, div {
+  font-size: 2vw;
+}
+
+.info .chefs {
+  display: grid;
+  grid-area: photo;
+  position: relative;
+  margin: 1.5rem 0 1.5rem 0;
+}
+
+.info .chefs #top {
+  position: absolute;
+  margin: 12% 0 0 20%;
+  width: 100%;
+  max-width: 80%;
+  height: auto;
+}
+
+.info .chefs #bottom {
+  background-color: blueviolet;
+  margin: 52% 0 0 0;
+  width: 100%;
+  max-width: 80%;
+  height: auto;
+}
+
+footer {
+  display: grid;
+  grid-area: footer;
+  grid-template-columns: auto auto auto auto;
+  grid-template-areas:
+    "logo nav contact social";
+  margin: 5% 0;
+}
+
+footer ul {
+  margin: 0;
+  list-style: none;
 }
