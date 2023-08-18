@@ -1,5 +1,23 @@
+@font-face {
+  font-family: "Karla";
+  src: url("fonts/Karla/static/Karla-Regular.ttf") format("truetype");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Markazi";
+  src: url("fonts/Markazi_Text/static/MarkaziText-Medium.ttf") format("truetype");
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  background-color: #EDEFEE;
+}
+
 p, div {
   font-size: 1vw;
+  font-family: 'Karla';
 }
 
 li {
@@ -8,41 +26,55 @@ li {
 
 h1{
   font-size: 4vw;
+  font-family: 'Markazi';
 }
 
 h2{
   font-size: 3vw;
+  font-family: 'Markazi';
 }
 
 .body {
   display: grid;
-  margin: 0% 15% 0% 15%;
   grid-template-rows: repeat(3, auto);
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 1fr;
   grid-template-areas:
-    "header nav nav nav nav nav"
-    "main main main main main main"
-    "footer footer footer footer footer footer";
+    "header"
+    "main"
+    "footer";
 }
 
-header {
+.header {
   display: grid;
   grid-area: header;
+  padding: 1.5rem 15%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-areas: "logo nav nav nav nav nav";
+}
+
+.header header {
+  display: grid;
+  grid-area: logo;
   place-items: center;
   padding: 0.5rem 0;
 }
 
-nav {
+.header nav {
   display: grid;
   grid-area: nav;
-  padding: 0.5rem 0;
+  padding: 0.8rem 0;
 }
 
-nav ul {
+.header nav ul {
   display: grid;
   grid-template-columns: 14% 14% 14% 22% 22% 14%;
   list-style: none;
   text-align: center;
+}
+
+.header nav li {
+  color: #333333;
+  font-weight: 300;
 }
 
 main {
@@ -59,22 +91,45 @@ main {
 
 .intro {
   display: grid;
+  background-color: #495E57;
   grid-area: intro;
   grid-template-rows: auto;
   grid-template-columns: auto auto;
   grid-template-areas: "text photo";
-  margin: 1.5rem 0 1.5rem 0;
+  padding: 1.5rem 15% 1.5rem 15%;
 }
 
 .intro .text {
   display: grid;
-  grid-template-rows: 13% 15% auto auto;
+  grid-template-rows: 10% 15% auto auto;
   grid-area: text;
-  margin: 5% 25% 0 0;
+  margin: 10% 25% 0 0;
 }
 
-.intro .text p, div {
+.intro .text h1 {
+  font-size: 4vw;
+  font-family: 'Markazi';
+  background-color: #495E57;
+  color: #EDEFEE;
+}
+
+.intro .text h2 {
+  font-size: 3vw;
+  font-family: 'Markazi';
+  background-color: #495E57;
+  color: #F4CE14;
+}
+
+.intro .text p {
   font-size: 2vw;
+  background-color: #495E57;
+  color: #EDEFEE;
+}
+
+.intro .text div {
+  font-size: 2vw;
+  background-color: #495E57;
+  color: #EDEFEE;
 }
 
 .intro .food {

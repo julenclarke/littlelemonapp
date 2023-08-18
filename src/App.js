@@ -14,8 +14,10 @@ function App() {
         <meta property="og:image" content="assets/img/Logo.svg" />
       </head>
       <body className='body'>
-        <Header/>
-        <Nav/>
+        <div className='header'>
+          <Header/>
+          <Nav/>
+        </div>
         <Main/>
         <Footer/>
       </body>
