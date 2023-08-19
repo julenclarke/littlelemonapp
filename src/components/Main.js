@@ -1,3 +1,5 @@
+import { Button } from '@chakra-ui/react'
+
 function Main() {
     return (
         <main>
@@ -5,10 +7,12 @@ function Main() {
                 <div className="text">
                     <h1>Little Lemon</h1>
                     <h2>Donostia</h2>
-                    <p>We are a family owned Basque restaurant, focused on traditional recipes served with a modern twist.
-
-    Have a taste of the best Donostiarra pintxos in town.</p>
-                    <div>Reserve a table</div>
+                    <p>We are a family owned Basque restaurant, focused on traditional recipes served with a modern twist.<br/><br/>Have a taste of the best Donostiarra pintxos in town.</p>
+                    <div>
+                        <Button className='button' size='lg'>
+                            Reserve a table
+                        </Button>
+                    </div>
                 </div>
                 <div className="food">
                     <img width={300} src={require("../assets/restaurantfood.jpg")} alt="Restaurant food" />
@@ -16,27 +20,37 @@ function Main() {
             </section>
             <section className="menu">
                 <h1>This week's specials!</h1>
-                <div className="menu-button">Online Menu</div>
+                <div className="menu-button">
+                    <Button className='button' size='lg'>
+                        Online Menu
+                    </Button>
+                </div>
                 <div className="dish1">
                     <img width={300} src={require("../assets/greek salad.jpg")} alt="Greek Salad" />
-                    <h3>Greek Salad</h3>
-                    <p id="price">12.99€</p>
+                    <div className='name'>
+                        <h3>Greek Salad</h3>
+                        <p id="price">12.99€</p>
+                    </div>
                     <p id="description">The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.</p>
-                    <div className="order"><p>Order a delivery  🛵</p></div>
+                    <div className="order"><a href='http://localhost:3000/'>Order a delivery  🛵</a></div>
                 </div>
                 <div className="dish2">
                     <img width={300} src={require("../assets/bruschetta.png")} alt="Bruschetta" />
-                    <h3>Bruschetta</h3>
-                    <p id="price">5.99€</p>
+                    <div className='name'>
+                        <h3>Bruschetta</h3>
+                        <p id="price">5.99€</p>
+                    </div>
                     <p id="description">Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil.</p>
-                    <div className="order"><p>Order a delivery  🛵</p></div>
+                    <div className="order"><a href='http://localhost:3000/'>Order a delivery  🛵</a></div>
                 </div>
                 <div className="dish3">
                     <img width={300} src={require("../assets/lemon dessert.jpg")} alt="Lemon Dessert" />
-                    <h3>Lemon Dessert</h3>
-                    <p id="price">5.00€</p>
+                    <div className='name'>
+                        <h3>Lemon Dessert</h3>
+                        <p id="price">5.00€</p>
+                    </div>
                     <p id="description">This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p>
-                    <div className="order"><p>Order a delivery  🛵</p></div>
+                    <div className="order"><a href='http://localhost:3000/'>Order a delivery  🛵</a></div>
                 </div>
             </section>
             <section className="testimonials">
@@ -146,9 +160,7 @@ function Main() {
                 <div className="text">
                     <h1>Little Lemon</h1>
                     <h2>Donostia</h2>
-                    <p>We are a family owned Basque restaurant, focused on traditional recipes served with a modern twist.
-
-                    Have a taste of the best Donostiarra pintxos in town cooked by Mario and Adrian, best chefs in town!</p>
+                    <p>We are a family owned Basque restaurant, focused on traditional recipes served with a modern twist.<br/><br/>Have a taste of the best Donostiarra pintxos in town cooked by Mario and Adrian, best chefs in town!</p>
                 </div>
                 <div className="chefs">
                     <img id="top" width={300} src={require("../assets/Mario and Adrian A.jpg")} alt="Mario and Adrian" />

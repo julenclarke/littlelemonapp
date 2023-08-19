@@ -10,6 +10,16 @@
   font-style: normal;
 }
 
+/*@media (min-width: 440px) {
+  .container {
+  grid-template-columns: 150px 1fr 150px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header header header"
+                       "left main right"
+                       "footer footer footer";
+  }
+}*/
+
 * {
   margin: 0;
   background-color: #EDEFEE;
@@ -22,6 +32,7 @@ p, div {
 
 li {
   font-size: 1.5vw;
+  font-family: 'Karla';
 }
 
 h1{
@@ -47,7 +58,7 @@ h2{
 .header {
   display: grid;
   grid-area: header;
-  padding: 1.5rem 15%;
+  padding: 2rem 15%;
   grid-template-columns: repeat(6, 1fr);
   grid-template-areas: "logo nav nav nav nav nav";
 }
@@ -56,18 +67,23 @@ h2{
   display: grid;
   grid-area: logo;
   place-items: center;
-  padding: 0.5rem 0;
+}
+
+.header header .logo {
+  width: 100%;
+  align-items: left;
 }
 
 .header nav {
   display: grid;
   grid-area: nav;
-  padding: 0.8rem 0;
+  padding-left: 5%;
 }
 
 .header nav ul {
   display: grid;
   grid-template-columns: 14% 14% 14% 22% 22% 14%;
+  place-items: center;
   list-style: none;
   text-align: center;
 }
@@ -94,16 +110,18 @@ main {
   background-color: #495E57;
   grid-area: intro;
   grid-template-rows: auto;
-  grid-template-columns: auto auto;
+  grid-template-columns: 50% 50%;
   grid-template-areas: "text photo";
-  padding: 1.5rem 15% 1.5rem 15%;
+  padding: 2% 15%;
 }
 
 .intro .text {
   display: grid;
-  grid-template-rows: 10% 15% auto auto;
+  background-color: #495E57;
+  grid-template-rows: 15% 15% 45% 25%;
   grid-area: text;
-  margin: 10% 25% 0 0;
+  padding: 10% 0;
+  margin-right: 25%;
 }
 
 .intro .text h1 {
@@ -121,102 +139,151 @@ main {
 }
 
 .intro .text p {
-  font-size: 2vw;
+  font-size: 1.5vw;
   background-color: #495E57;
   color: #EDEFEE;
 }
 
 .intro .text div {
-  font-size: 2vw;
   background-color: #495E57;
   color: #EDEFEE;
+  padding: 10% 0;
+}
+
+.intro .text div .button {
+  height: 50px;
+  width: 200px;
+  font-size: 1rem;
+  background-color: #F4CE14;
+  color: #333333;
 }
 
 .intro .food {
   display: grid;
   grid-area: photo;
+  place-items: center;
+  background-color: #495E57;
   justify-content: end;
-  margin: 1.5rem 0 1.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .intro .food img {
   width: 100%;
-  max-width: 500px;
+  max-width: 1500px;
   height: auto;
+  object-fit: cover;
+  border-radius: 8%;
 }
 
 .menu {
   display: grid;
   grid-area: menu;
-  grid-template-rows: auto auto;
-  grid-template-columns: auto auto auto;
+  place-items: center;
+  grid-template-rows: auto 70%;
+  grid-template-columns: 33.3% 33.3% 33.3%;
   grid-template-areas:
     "heading heading button"
     "dish1 dish2 dish3";
-  margin: 1.5rem 0 1.5rem 0;
-}
-
-.dish1, .dish2, .dish3 {
-  display: grid;
-  place-items: center;
-  text-align: left;
-  grid-template-rows: auto auto auto auto;
-  grid-template-columns: auto 25%;
-  grid-template-areas:
-    "photo photo"
-    "name price"
-    "description description"
-    "button button";
-  padding: 0 20%;
+  padding: 4% 15% 10% 15%;
 }
 
 .menu h1{
   display: grid;
   grid-area: heading;
+  width: 100%;
+  text-align: left;
+  padding: 5% 0 5% 5%;
 }
 
 .menu .menu-button{
   display: grid;
   grid-area: button;
+  width: 100%;
+  justify-content: end;
+  padding: 5% 15% 5% 0;
+}
+
+.menu .menu-button .button {
+  height: 50px;
+  width: 200px;
+  font-size: 1rem;
+  background-color: #F4CE14;
+  color: #333333;
+}
+
+.dish1, .dish2, .dish3 {
+  display: grid;
   place-items: center;
+  height: 100%;
+  text-align: left;
+  grid-template-rows: 40% 15% 30% 15%;
+  /*grid-template-rows: auto auto auto auto;*/
+  grid-template-areas:
+    "photo"
+    "name"
+    "description"
+    "button";
+  margin: 0 5%;
+  background-color: #FBDABB;
+  width: 80%;
+  border-radius: 8%;
+  filter: drop-shadow(8px 8px 10px #333333);
 }
 
 .menu img {
   display: grid;
   grid-area: photo;
-  height: auto;
-  max-width: 200px;
+  height: 100%;
   width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 8%;
+  border-top-right-radius: 8%;
 }
 
-.menu h3 {
+.menu .name {
   display: grid;
-  font-size: 1.5vw;
+  place-items: center;
   grid-area: name;
-  width: 100%;
+  width: 80%;
+  grid-template-columns: auto 25%;
+  grid-template-areas: "name price";
+  background-color: #FBDABB;
 }
 
-.menu #price {
+.menu .name h3 {
+  display: grid;
+  grid-area: name;
+  font-size: 1.5vw;
+  width: 100%;
+  background-color: #FBDABB;
+}
+
+.menu .name #price {
   display: grid;
   grid-area: price;
   width: 100%;
   text-align: right;
+  background-color: #FBDABB;
 }
 
 .menu #description {
   display: grid;
   grid-area: description;
+  width: 80%;
+  background-color: #FBDABB;
 }
 
 .menu .order {
   display: grid;
   grid-area: button;
-  width: 100%;
+  width: 80%;
   text-align: left;
+  background-color: #FBDABB;
 }
 
-.menu .order p {
+.menu .order a {
   font-size: 1.2vw;
+  background-color: #FBDABB;
 }
 
 .menu .dish1 {
@@ -241,7 +308,8 @@ main {
   grid-template-areas:
     "title title title title"
     "testimonial1 testimonial2 testimonial3 testimonial4";
-  margin: 1.5rem 0 1.5rem 0;
+  padding: 4% 15% 10% 15%;
+  background-color: #F4CE14;
 }
 
 .testimonial1, .testimonial2, .testimonial3, .testimonial4 {
@@ -253,13 +321,17 @@ main {
     "stars stars"
     "photo name"
     "description description";
-  padding: 15%;
+  padding: 10% 15%;
+  filter: drop-shadow(8px 8px 10px #333333);
 }
 
 .testimonials h1 {
   display: grid;
   grid-area: title;
   place-items: center;
+  color: #333333;
+  background-color: #F4CE14;
+  padding-bottom: 3%;
 }
 
 .testimonials #stars {
@@ -287,6 +359,7 @@ main {
   height: auto;
   max-width: 80px;
   width: 80%;
+  border-radius: 100%;
 }
 
 .testimonials .description {
@@ -294,14 +367,16 @@ main {
   grid-area: description;
   width: 100%;
   text-align: left;
+  padding-top: 10%;
+}
+
+.testimonials h3 {
+  font-size: 1.3vw;
+  font-weight: bold;
 }
 
 .testimonials p {
   font-size: 1.2vw;
-}
-
-.testimonials h3 {
-  font-size: 1.5vw;
 }
 
 .testimonial1 {
@@ -330,7 +405,8 @@ main {
   grid-template-rows: auto;
   grid-template-columns: 60% 40%;
   grid-template-areas: "text photo";
-  margin: 1.5rem 0 1.5rem 0;
+  padding: 2% 15% 7% 15%;
+  background-color: #333333;
 }
 
 .info .text {
@@ -338,17 +414,31 @@ main {
   grid-template-rows: 13% 15% auto auto;
   grid-area: text;
   margin: 5% 25% 0 0;
+  color: #EDEFEE;
+  background-color: #333333;
 }
 
-.info .text p, div {
+.info .text h1 {
+  color: #EDEFEE;
+  background-color: #333333;
+}
+
+.info .text h2{
+  color: #F4CE14;
+  background-color: #333333;
+}
+
+.info .text p {
   font-size: 2vw;
+  background-color: #333333;
 }
 
 .info .chefs {
   display: grid;
   grid-area: photo;
   position: relative;
-  margin: 1.5rem 0 1.5rem 0;
+  margin: 25% 0;
+  background-color: #333333;
 }
 
 .info .chefs #top {
@@ -373,7 +463,7 @@ footer {
   grid-template-columns: auto auto auto auto;
   grid-template-areas:
     "logo nav contact social";
-  margin: 5% 0;
+  padding: 5% 15%;
 }
 
 footer ul {
