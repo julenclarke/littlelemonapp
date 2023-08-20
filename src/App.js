@@ -1,9 +1,12 @@
 import './App.css';
-import Header from './components/Header';
 import Nav from './components/Nav';
-import Main from './components/Main';
+import CallToAction from './components/CallToAction';
+import Specials from './components/Specials';
+import CustomersSay from './components/CustomersSay';
+import Donostia from './components/Donostia';
 import Footer from './components/Footer';
 import { ChakraProvider } from '@chakra-ui/react'
+import {Routes, Route} from 'react-router-dom';
 
 function App() {
   return (
@@ -15,12 +18,18 @@ function App() {
         <meta property="og:image" content="assets/img/Logo.svg" />
       </head>
       <body className='body'>
-        <div className='header'>
-          <Header/>
-          <Nav/>
-        </div>
-        <Main/>
+        <Nav/>
+        <CallToAction/>
+        <Specials/>
+        <CustomersSay/>
+        <Donostia/>
         <Footer/>
+        <Routes> 
+          <Route path="/" element={<CallToAction/>}></Route>
+          <Route path="/specials" element={<Specials/>}></Route>
+          <Route path="/customers-say" element={<CustomersSay/>}></Route>
+          <Route path="/donostia" element={<Donostia/>}></Route>
+        </Routes>
       </body>
     </ChakraProvider>
   );

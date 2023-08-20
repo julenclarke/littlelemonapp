@@ -47,75 +47,62 @@ h2{
 
 .body {
   display: grid;
-  grid-template-rows: repeat(3, auto);
-  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+  grid-template-columns: auto;
   grid-template-areas:
     "header"
-    "main"
+    "call-to-action"
+    "specials"
+    "customers-say"
+    "donostia"
     "footer";
 }
 
-.header {
+nav {
   display: grid;
   grid-area: header;
   padding: 2rem 15%;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-areas: "logo nav nav nav nav nav";
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-areas: "logo ul ul ul ul ul ul";
 }
 
-.header header {
+nav header {
   display: grid;
   grid-area: logo;
   place-items: center;
 }
 
-.header header .logo {
+nav header .logo {
   width: 100%;
   align-items: left;
 }
 
-.header nav {
+nav ul {
   display: grid;
-  grid-area: nav;
+  grid-area: ul;
   padding-left: 5%;
-}
-
-.header nav ul {
-  display: grid;
   grid-template-columns: 14% 14% 14% 22% 22% 14%;
   place-items: center;
   list-style: none;
   text-align: center;
 }
 
-.header nav li {
+nav ul li {
   color: #333333;
   font-weight: 300;
 }
 
-main {
-  display: grid;
-  grid-area: main;
-  grid-template-rows: repeat(4, auto);
-  grid-template-columns: auto;
-  grid-template-areas:
-    "intro"
-    "menu"
-    "testimonials"
-    "info";
-}
-
-.intro {
+.call-to-action {
   display: grid;
   background-color: #495E57;
-  grid-area: intro;
+  grid-area: call-to-action;
   grid-template-rows: auto;
   grid-template-columns: 50% 50%;
   grid-template-areas: "text photo";
   padding: 2% 15%;
 }
 
-.intro .text {
+.call-to-action .text {
   display: grid;
   background-color: #495E57;
   grid-template-rows: 15% 15% 45% 25%;
@@ -124,33 +111,33 @@ main {
   margin-right: 25%;
 }
 
-.intro .text h1 {
+.call-to-action .text h1 {
   font-size: 4vw;
   font-family: 'Markazi';
   background-color: #495E57;
   color: #EDEFEE;
 }
 
-.intro .text h2 {
+.call-to-action .text h2 {
   font-size: 3vw;
   font-family: 'Markazi';
   background-color: #495E57;
   color: #F4CE14;
 }
 
-.intro .text p {
+.call-to-action .text p {
   font-size: 1.5vw;
   background-color: #495E57;
   color: #EDEFEE;
 }
 
-.intro .text div {
+.call-to-action .text div {
   background-color: #495E57;
   color: #EDEFEE;
   padding: 10% 0;
 }
 
-.intro .text div .button {
+.call-to-action .text div .button {
   height: 50px;
   width: 200px;
   font-size: 1rem;
@@ -158,7 +145,7 @@ main {
   color: #333333;
 }
 
-.intro .food {
+.call-to-action .food {
   display: grid;
   grid-area: photo;
   place-items: center;
@@ -167,7 +154,7 @@ main {
   margin: 1.5rem 0;
 }
 
-.intro .food img {
+.call-to-action .food img {
   width: 100%;
   max-width: 1500px;
   height: auto;
@@ -175,19 +162,19 @@ main {
   border-radius: 8%;
 }
 
-.menu {
+.specials {
   display: grid;
-  grid-area: menu;
+  grid-area: specials;
   place-items: center;
   grid-template-rows: auto 70%;
   grid-template-columns: 33.3% 33.3% 33.3%;
   grid-template-areas:
     "heading heading button"
-    "dish1 dish2 dish3";
+    "special1 special2 special3";
   padding: 4% 15% 10% 15%;
 }
 
-.menu h1{
+.specials h1{
   display: grid;
   grid-area: heading;
   width: 100%;
@@ -195,7 +182,7 @@ main {
   padding: 5% 0 5% 5%;
 }
 
-.menu .menu-button{
+.specials .specials-button{
   display: grid;
   grid-area: button;
   width: 100%;
@@ -203,7 +190,7 @@ main {
   padding: 5% 15% 5% 0;
 }
 
-.menu .menu-button .button {
+.specials .specials-button .button {
   height: 50px;
   width: 200px;
   font-size: 1rem;
@@ -211,13 +198,12 @@ main {
   color: #333333;
 }
 
-.dish1, .dish2, .dish3 {
+.special1, .special2, .special3 {
   display: grid;
   place-items: center;
   height: 100%;
   text-align: left;
   grid-template-rows: 40% 15% 30% 15%;
-  /*grid-template-rows: auto auto auto auto;*/
   grid-template-areas:
     "photo"
     "name"
@@ -230,7 +216,7 @@ main {
   filter: drop-shadow(8px 8px 10px #333333);
 }
 
-.menu img {
+.specials img {
   display: grid;
   grid-area: photo;
   height: 100%;
@@ -240,7 +226,7 @@ main {
   border-top-right-radius: 8%;
 }
 
-.menu .name {
+.specials .name {
   display: grid;
   place-items: center;
   grid-area: name;
@@ -250,7 +236,7 @@ main {
   background-color: #FBDABB;
 }
 
-.menu .name h3 {
+.specials .name h3 {
   display: grid;
   grid-area: name;
   font-size: 1.5vw;
@@ -258,7 +244,7 @@ main {
   background-color: #FBDABB;
 }
 
-.menu .name #price {
+.specials .name #price {
   display: grid;
   grid-area: price;
   width: 100%;
@@ -266,14 +252,14 @@ main {
   background-color: #FBDABB;
 }
 
-.menu #description {
+.specials #description {
   display: grid;
   grid-area: description;
   width: 80%;
   background-color: #FBDABB;
 }
 
-.menu .order {
+.specials .order {
   display: grid;
   grid-area: button;
   width: 80%;
@@ -281,26 +267,26 @@ main {
   background-color: #FBDABB;
 }
 
-.menu .order a {
+.specials .order a {
   font-size: 1.2vw;
   background-color: #FBDABB;
 }
 
-.menu .dish1 {
-  grid-area: dish1;
+.specials .special1 {
+  grid-area: special1;
 }
 
-.menu .dish2 {
-  grid-area: dish2;
+.specials .special2 {
+  grid-area: special2;
 }
 
-.menu .dish3 {
-  grid-area: dish3;
+.specials .special3 {
+  grid-area: special3;
 }
 
-.testimonials {
+.customers-say {
   display: grid;
-  grid-area: testimonials;
+  grid-area: customers-say;
   place-items: center;
   gap: 5%;
   grid-template-rows: auto auto;
@@ -325,7 +311,7 @@ main {
   filter: drop-shadow(8px 8px 10px #333333);
 }
 
-.testimonials h1 {
+.customers-say h1 {
   display: grid;
   grid-area: title;
   place-items: center;
@@ -334,7 +320,7 @@ main {
   padding-bottom: 3%;
 }
 
-.testimonials #stars {
+.customers-say #stars {
   display: grid;
   grid-area: stars;
   width: 100%;
@@ -342,27 +328,27 @@ main {
   padding-bottom: 15%;
 }
 
-.testimonials svg {
+.customers-say svg {
   height: auto;
   max-width: 150px;
   width: 70%;
 }
 
-.testimonials .pic {
+.customers-say .pic {
   display: grid;
   grid-area: photo;
   width: 100%;
   text-align: left;
 }
 
-.testimonials img {
+.customers-say img {
   height: auto;
   max-width: 80px;
   width: 80%;
   border-radius: 100%;
 }
 
-.testimonials .description {
+.customers-say .description {
   display: grid;
   grid-area: description;
   width: 100%;
@@ -370,12 +356,12 @@ main {
   padding-top: 10%;
 }
 
-.testimonials h3 {
+.customers-say h3 {
   font-size: 1.3vw;
   font-weight: bold;
 }
 
-.testimonials p {
+.customers-say p {
   font-size: 1.2vw;
 }
 
@@ -399,9 +385,9 @@ main {
   grid-area: testimonial4;
 }
 
-.info {
+.donostia {
   display: grid;
-  grid-area: info;
+  grid-area: donostia;
   grid-template-rows: auto;
   grid-template-columns: 60% 40%;
   grid-template-areas: "text photo";
@@ -409,7 +395,7 @@ main {
   background-color: #333333;
 }
 
-.info .text {
+.donostia .text {
   display: grid;
   grid-template-rows: 13% 15% auto auto;
   grid-area: text;
@@ -418,22 +404,22 @@ main {
   background-color: #333333;
 }
 
-.info .text h1 {
+.donostia .text h1 {
   color: #EDEFEE;
   background-color: #333333;
 }
 
-.info .text h2{
+.donostia .text h2{
   color: #F4CE14;
   background-color: #333333;
 }
 
-.info .text p {
+.donostia .text p {
   font-size: 2vw;
   background-color: #333333;
 }
 
-.info .chefs {
+.donostia .chefs {
   display: grid;
   grid-area: photo;
   position: relative;
@@ -441,7 +427,7 @@ main {
   background-color: #333333;
 }
 
-.info .chefs #top {
+.donostia .chefs #top {
   position: absolute;
   margin: 12% 0 0 20%;
   width: 100%;
@@ -449,7 +435,7 @@ main {
   height: auto;
 }
 
-.info .chefs #bottom {
+.donostia .chefs #bottom {
   background-color: blueviolet;
   margin: 52% 0 0 0;
   width: 100%;
