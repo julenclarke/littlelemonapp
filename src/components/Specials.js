@@ -3,7 +3,7 @@ import { Button } from '@chakra-ui/react'
 function Specials() {
     return (
         <section className="specials">
-            <h1>This week's specials!</h1>
+            <h1 id="specials-section">This week's specials!</h1>
             <div className="specials-button">
                 <Button className='button' size='lg'>
                     Online Menu
