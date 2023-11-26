@@ -94,6 +94,10 @@ nav ul li {
   font-weight: 300;
 }
 
+nav ul li:hover {
+  color: #F4CE14;
+}
+
 .call-to-action {
   display: grid;
   background-color: #495E57;
@@ -147,6 +151,11 @@ nav ul li {
   color: #333333;
 }
 
+.call-to-action .text div .button:hover {
+  background-color: #333333;
+  color: #F4CE14;
+}
+
 .call-to-action .food {
   display: grid;
   grid-area: photo;
@@ -198,6 +207,11 @@ nav ul li {
   font-size: 1rem;
   background-color: #F4CE14;
   color: #333333;
+}
+
+.specials .specials-button .button:hover {
+  background-color: #333333;
+  color: #F4CE14;
 }
 
 .special1, .special2, .special3 {
@@ -518,6 +532,11 @@ nav ul li {
   margin-top: 5%;
 }
 
+.booking form .button:hover {
+  background-color: #333333;
+  color: #F4CE14;
+}
+
 footer {
   display: grid;
   grid-area: footer;
@@ -530,6 +549,10 @@ footer {
 footer ul {
   margin: 0;
   list-style: none;
+}
+
+footer ul li:hover {
+  color: #F4CE14;
 }
 
 .confirmed-booking h1 {
@@ -555,5 +578,4 @@ footer ul {
 .confirmed-booking .button:hover {
   color: #495E57;
   background-color: #F4CE14;
-  margin-top: 5%;
 }

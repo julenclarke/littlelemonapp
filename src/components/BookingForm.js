@@ -95,6 +95,7 @@ const BookingForm = (props) => {
                     <Input
                         id="date"
                         type="date"
+                        aria-label="Date"
                         value={props.date}
                         borderColor="#EDEFEE"
                         color="#EDEFEE"
@@ -115,6 +116,7 @@ const BookingForm = (props) => {
                     <Select
                         id="time"
                         name="time"
+                        aria-label="Time"
                         value={props.time}
                         bg="#495E57"
                         size='lg'
@@ -140,6 +142,7 @@ const BookingForm = (props) => {
                         iconColor="#EDEFEE"
                         id="guests"
                         name="guests"
+                        aria-label="Guests"
                         bg="#495E57"
                         size='lg'
                         fontSize='1.2vw'
@@ -162,6 +165,7 @@ const BookingForm = (props) => {
                     <Select
                         id="occasion"
                         name="occasion"
+                        aria-label="Occasion"
                         bg="#495E57"
                         borderColor="#EDEFEE"
                         color="#EDEFEE"
