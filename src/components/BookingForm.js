@@ -9,7 +9,7 @@ import {
 } from "@chakra-ui/react";
 import useSubmit from "../hooks/useSubmit";
 import { useAlertContext } from "../context/alertContext";
-import { fetchAPI, submitAPI } from "../assets/mockAPI";
+import { fetchAPI } from "../assets/mockAPI";
 // import * as Yup from 'yup';
 
 const BookingForm = (props) => {
@@ -33,7 +33,7 @@ const BookingForm = (props) => {
         )
     })
 
-    const {isLoading, response, submit} = useSubmit();
+    const {isLoading, response } = useSubmit();
     const { onOpen } = useAlertContext();
 
     // const formik = useFormik({
@@ -59,12 +59,13 @@ const BookingForm = (props) => {
         props.dispatch({type: "time_change", newTime: props.availableTimes[0]});
         setGuests(1);
         // setOccasion("Birthday");
-      };
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        submitAPI({date: props.date, time: props.time, guests: guests})
-        submit("", {date: props.date, time: props.time, guests: guests})
+        // submitAPI({date: props.date, time: props.time, guests: guests})
+        // submit("", {date: props.date, time: props.time, guests: guests})
+        props.submitForm({date: props.date, time: props.time, guests: guests});
         fetchAPI(props.date)
             .then(response => props.dispatch({type: 'new_available_times', newAvailableTimes: response}))
     }

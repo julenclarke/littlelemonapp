@@ -1,8 +1,9 @@
 import BookingForm from "./BookingForm";
 import { useState, useReducer, useEffect } from "react";
-import { fetchAPI } from "../assets/mockAPI";
+import { fetchAPI, submitAPI } from "../assets/mockAPI";
+import { useNavigate } from "react-router-dom";
 
-function BookingPage() {
+const BookingPage = (props) => {
     let newDate = new Date();
     let day = newDate.getDate();
     let month = newDate.getMonth() + 1;
@@ -11,6 +12,19 @@ function BookingPage() {
     newDate = year + "-" + month + "-" + day;
 
     const [isLoaded, setIsLoaded] = useState(false);
+    // const [submitted, setSubmitted] = useState(false);
+
+    const navigate = useNavigate();
+
+    // useEffect(() => {
+    //     setSubmitted(true)
+    // }, [submitted])
+
+    const submitForm = (formData) => {
+        props.setConfirmed(true);
+        submitAPI(formData);
+        navigate("/confirmed-booking");
+    }
 
     const updateTimes = (state, action) => {
         switch (action.type) {
@@ -62,6 +76,7 @@ function BookingPage() {
                     time={state.time}
                     dispatch={dispatch}
                     initializeTimes = {initializeTimes}
+                    submitForm = {submitForm}
                 />)
             }
         </section>

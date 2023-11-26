@@ -531,3 +531,29 @@ footer ul {
   margin: 0;
   list-style: none;
 }
+
+.confirmed-booking h1 {
+    font-size: 4vw;
+    font-family: 'Markazi';
+    color: #495E57;
+}
+
+.confirmed-booking h2 {
+  font-size: 3vw;
+  font-family: 'Markazi';
+  color: #333333;
+}
+
+.confirmed-booking .button {
+  font-size: 1.2vw;
+  height: 50px;
+  background-color: #495E57;
+  color: #EDEFEE;
+  margin-top: 5%;
+}
+
+.confirmed-booking .button:hover {
+  color: #495E57;
+  background-color: #F4CE14;
+  margin-top: 5%;
+}
