@@ -1,7 +1,7 @@
 function Footer() {
     return (
         <footer>
-            <a href='http://localhost:3000/'>
+            <a href='http://localhost:3000/' aria-label="Home">
                 <svg width="148" height="40" viewBox="0 0 148 40" fill="none">
                     <rect width="147.5" height="40" fill="url(#pattern0)"/>
                     <defs>
