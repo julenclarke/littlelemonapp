@@ -1,4 +1,44 @@
+import React, {useEffect, useRef } from "react";
+
 function Nav() {
+    const handleClick = (anchor) => () => {
+        const id = `${anchor}-section`;
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }
+    };
+
+    const headerRef = useRef(null);
+
+    useEffect(() => {
+        let prevScrollPos = window.scrollY;
+
+        const handleScroll = () => {
+            const currScrollPos = window.scrollY;
+            const currHeaderElement = headerRef.current;
+
+            if (!currHeaderElement)
+                return;
+
+            if (prevScrollPos > currScrollPos)
+                currHeaderElement.style.transform = 'translateY(0)';
+            else
+                currHeaderElement.style.transform = 'translateY(-200px)';
+
+            prevScrollPos = currScrollPos;
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <nav>
             <header>
@@ -18,9 +58,9 @@ function Nav() {
             </header>
             <ul>
                 <li><a href='http://localhost:3000/'>Home</a></li>
-                <li><a href='http://localhost:3000/'>About</a></li>
-                <li><a href='http://localhost:3000/'>Menu</a></li>
-                <li><a href='http://localhost:3000/'>Reservations</a></li>
+                <li><a href='#call-to-action' onClick={handleClick('call-to-action')}>About</a></li>
+                <li><a href='#specials' onClick={handleClick('specials')}>Menu</a></li>
+                <li><a href='#booking' onClick={handleClick('booking')}>Reservations</a></li>
                 <li><a href='http://localhost:3000/'>Order Online</a></li>
                 <li><a href='http://localhost:3000/'>Login</a></li>
             </ul>
