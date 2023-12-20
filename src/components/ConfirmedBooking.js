@@ -15,6 +15,7 @@ const ConfirmedBooking = (props) => {
             className = "confirmed-booking"
         >
             <VStack spacing={3}>
+            <div>{true}</div>
                 <svg width="148" height="40" viewBox="0 0 148 40" fill="none" aria-label="Little Lemon logo">
                     <rect width="147.5" height="40" fill="url(#pattern0)"/>
                     <defs>
